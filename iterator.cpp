@@ -150,7 +150,7 @@ T* Vector<T>::begin() {
 
 template <typename T>
 T* Vector<T>::end() {
-  return &m_arr[m_index-1];
+  return &m_arr[m_index];
 }
 
 template <typename T>
