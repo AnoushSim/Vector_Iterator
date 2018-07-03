@@ -156,7 +156,6 @@ T* Vector<T>::end() {
 template <typename T>
 void Vector<T>::push_back(T element) {
   if(m_index == m_size - 1) {
-    {
       T* tmp = new T[2 * m_size];
       for (int ix = 0; ix < m_index; ++ix)
 	       tmp[ix] = m_arr[ix];
@@ -165,7 +164,6 @@ void Vector<T>::push_back(T element) {
       m_size *= 2;
     }
   m_arr[++m_index] = element;
-  }
 }
 
 template <typename T>
@@ -209,13 +207,6 @@ void Vector<T>::showVector() const
       std::cout << m_arr[ix] << std::endl;
 }
 
-template <typename T>
-void showVec(T begin, T end) {
-        for(auto it = begin; it <= end; ++it) {
-                std::cout << *it << std::endl;
-        }
-}
-
 
 int main() {
 	Vector<int> vector;
@@ -225,6 +216,9 @@ int main() {
 
 	Vector<int>::Iterator begin = vector.begin();
 	Vector<int>::Iterator end = vector.end();
-
-	showVec(begin,end);
+	
+	for(auto it = begin; it <= end; ++it) {
+                std::cout << *it << std::endl;
+        }
+  return 0;
 }
